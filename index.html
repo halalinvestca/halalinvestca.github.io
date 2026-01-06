@@ -602,7 +602,8 @@
 <script>
 const translations = {
   en: {
-    investingForMuslims: "Investing for Muslims in Canada",
+        siteTitle: "HalalWealthCA - Halal Wealth for Canadians",
+        investingForMuslims: "Investing for Muslims in Canada",
     heroDesc: "Many Muslims keep their savings in cash because they assume all investments involve interest — this is not true!",
     accountsBtn: "What are investment accounts?",
     criteriaBtn: "What to invest in?",
@@ -704,7 +705,8 @@ const translations = {
         respExample: "You put in $2,500 for the year. The government adds a $500 grant (CESG) for free into the account.",
     },
   ar: {
-    investingForMuslims: "الاستثمار للمسلمين في كندا",
+        siteTitle: "HalalWealthCA - الثروة الحلال للمقيمين في كندا",
+        investingForMuslims: "الاستثمار للمسلمين في كندا",
     heroDesc: "يحتفظ العديد من المسلمين بمدخراتهم نقداً لأنهم يفترضون أن جميع الاستثمارات تتضمن فائدة — هذا ليس صحيحاً!",
     accountsBtn: "ما هي حسابات الاستثمار؟",
     criteriaBtn: "فيماذا تستثمر؟",
@@ -806,7 +808,8 @@ const translations = {
             officialGuideRESP: "الدليل الرسمي لـ RESP →",
     },
   ur: {
-    investingForMuslims: "کنیڈا میں مسلمانوں کے لیے سرمایہ کاری",
+        siteTitle: "HalalWealthCA - حلال دولت برائے کینیڈین",
+        investingForMuslims: "کنیڈا میں مسلمانوں کے لیے سرمایہ کاری",
     heroDesc: "بہت سے مسلمان اپنی بچتوں کو نقد رکھتے ہیں کیونکہ وہ سمجھتے ہیں کہ تمام سرمایہ کاریوں میں سود شامل ہے — یہ غلط ہے!",
     accountsBtn: "سرمایہ کاری کے اکاؤنٹس کیا ہیں؟",
     criteriaBtn: "آپ کس میں سرمایہ کاری کریں؟",
@@ -924,6 +927,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function applyLanguage(lang) {
   const t = translations[lang];
+    // set the page title to the localized site title when available
+    if (t && t.siteTitle) document.title = t.siteTitle;
   document.documentElement.lang = lang;
   if (lang === 'ar' || lang === 'ur') {
     document.documentElement.dir = 'rtl';
